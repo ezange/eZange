@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  member_id: 1
+  title: MyString
+  post_date: 2012-11-15
+  post_time: 2012-11-15 16:21:09
+  sin_date: 2012-11-15
+  sin_time: 2012-11-15 16:21:09
+  sin_lat: 1.5
+  sin_lot: 1.5
+  sin: MyString
+  sin_street_number: MyString
+  sin_street_name: MyString
+  sin_city: MyString
+  sin_state: MyString
+  sin_zip: MyString
+  sin_country: MyString
+
+two:
+  member_id: 1
+  title: MyString
+  post_date: 2012-11-15
+  post_time: 2012-11-15 16:21:09
+  sin_date: 2012-11-15
+  sin_time: 2012-11-15 16:21:09
+  sin_lat: 1.5
+  sin_lot: 1.5
+  sin: MyString
+  sin_street_number: MyString
+  sin_street_name: MyString
+  sin_city: MyString
+  sin_state: MyString
+  sin_zip: MyString
+  sin_country: MyString

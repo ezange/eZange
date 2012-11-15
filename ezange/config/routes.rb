@@ -1,4 +1,14 @@
 Ezange::Application.routes.draw do
+  resources :charities
+
+  resources :repentances
+
+  resources :judgements
+
+  resources :sins
+
+  resources :members
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
