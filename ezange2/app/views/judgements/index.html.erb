@@ -1,0 +1,31 @@
+<h1>Listing judgements</h1>
+
+<table>
+  <tr>
+    <th>Memebr</th>
+    <th>Sin</th>
+    <th>Judgement date</th>
+    <th>Judgement time</th>
+    <th>Jugement</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @judgements.each do |judgement| %>
+  <tr>
+    <td><%= judgement.memebr_id %></td>
+    <td><%= judgement.sin_id %></td>
+    <td><%= judgement.judgement_date %></td>
+    <td><%= judgement.judgement_time %></td>
+    <td><%= judgement.jugement %></td>
+    <td><%= link_to 'Show', judgement %></td>
+    <td><%= link_to 'Edit', edit_judgement_path(judgement) %></td>
+    <td><%= link_to 'Destroy', judgement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Judgement', new_judgement_path %>

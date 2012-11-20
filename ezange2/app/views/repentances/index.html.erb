@@ -1,0 +1,29 @@
+<h1>Listing repentances</h1>
+
+<table>
+  <tr>
+    <th>Sin</th>
+    <th>Time donation</th>
+    <th>Monetary donation</th>
+    <th>Charity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @repentances.each do |repentance| %>
+  <tr>
+    <td><%= repentance.sin_id %></td>
+    <td><%= repentance.time_donation %></td>
+    <td><%= repentance.monetary_donation %></td>
+    <td><%= repentance.charity_id %></td>
+    <td><%= link_to 'Show', repentance %></td>
+    <td><%= link_to 'Edit', edit_repentance_path(repentance) %></td>
+    <td><%= link_to 'Destroy', repentance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Repentance', new_repentance_path %>

@@ -1,0 +1,37 @@
+<%= form_for(@judgement) do |f| %>
+  <% if @judgement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@judgement.errors.count, "error") %> prohibited this judgement from being saved:</h2>
+
+      <ul>
+      <% @judgement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :memebr_id %><br />
+    <%= f.number_field :memebr_id %>
+  </div>
+  <div class="field">
+    <%= f.label :sin_id %><br />
+    <%= f.number_field :sin_id %>
+  </div>
+  <div class="field">
+    <%= f.label :judgement_date %><br />
+    <%= f.date_select :judgement_date %>
+  </div>
+  <div class="field">
+    <%= f.label :judgement_time %><br />
+    <%= f.time_select :judgement_time %>
+  </div>
+  <div class="field">
+    <%= f.label :jugement %><br />
+    <%= f.text_field :jugement %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

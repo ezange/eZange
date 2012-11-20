@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  memebr_id: 1
+  sin_id: 1
+  judgement_date: 2012-11-20
+  judgement_time: 2012-11-20 17:37:50
+  jugement: MyString
+
+two:
+  memebr_id: 1
+  sin_id: 1
+  judgement_date: 2012-11-20
+  judgement_time: 2012-11-20 17:37:50
+  jugement: MyString

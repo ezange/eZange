@@ -1,3 +1,3 @@
 class Judgement < ActiveRecord::Base
-  attr_accessible :judegemen_date, :judgement, :judgement_time, :member_id
+  attr_accessible :judgement_date, :judgement, :judgement_time, :member_id, sin_id
 end

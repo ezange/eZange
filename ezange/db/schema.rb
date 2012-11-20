@@ -15,13 +15,13 @@ ActiveRecord::Schema.define(:version => 20121115212605) do
 
   create_table "charities", :force => true do |t|
     t.string   "charity_name"
-    t.string   "charity_street_number"
+    t.integer  "charity_street_number"
     t.string   "charity_street_name"
     t.string   "charity_city"
-    t.string   "charity_stat"
-    t.string   "charity_zip"
+    t.string   "charity_state"
+    t.integer  "charity_zip"
     t.string   "charity_country"
-    t.string   "charity_phone_number"
+    t.integer  "charity_phone_number"
     t.string   "charity_type"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
@@ -29,7 +29,8 @@ ActiveRecord::Schema.define(:version => 20121115212605) do
 
   create_table "judgements", :force => true do |t|
     t.integer  "member_id"
-    t.date     "judegemen_date"
+    t.integer  "sin_id"
+    t.date     "judgement_date"
     t.time     "judgement_time"
     t.string   "judgement"
     t.datetime "created_at",     :null => false
@@ -43,14 +44,16 @@ ActiveRecord::Schema.define(:version => 20121115212605) do
     t.string   "password"
     t.string   "street_number"
     t.string   "street_name"
-    t.string   "zip_code"
-    t.string   "email_string"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip_code"
+    t.string   "email_address"
     t.string   "religon"
     t.string   "education_level"
     t.string   "partner"
     t.string   "employment_status"
-    t.string   "age"
-    t.string   "number_of_children"
+    t.integer  "age"
+    t.integer  "number_of_children"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
@@ -74,11 +77,11 @@ ActiveRecord::Schema.define(:version => 20121115212605) do
     t.float    "sin_lat"
     t.float    "sin_lot"
     t.string   "sin"
-    t.string   "sin_street_number"
+    t.integer  "sin_street_number"
     t.string   "sin_street_name"
     t.string   "sin_city"
     t.string   "sin_state"
-    t.string   "sin_zip"
+    t.integer  "sin_zip"
     t.string   "sin_country"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false

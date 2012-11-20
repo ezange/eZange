@@ -7,14 +7,16 @@ class CreateMembers < ActiveRecord::Migration
       t.string :password
       t.string :street_number
       t.string :street_name
-      t.string :zip_code
-      t.string :email_string
+      t.string :city
+      t.string :state
+      t.integer :zip_code
+      t.string :email_address
       t.string :religon
       t.string :education_level
       t.string :partner
       t.string :employment_status
-      t.string :age
-      t.string :number_of_children
+      t.integer :age
+      t.integer :number_of_children
 
       t.timestamps
     end

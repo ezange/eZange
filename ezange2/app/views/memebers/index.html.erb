@@ -1,0 +1,53 @@
+<h1>Listing memebers</h1>
+
+<table>
+  <tr>
+    <th>User name</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Password</th>
+    <th>Street number</th>
+    <th>Street name</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip code</th>
+    <th>Email address</th>
+    <th>Religon</th>
+    <th>Education level</th>
+    <th>Partner</th>
+    <th>Employment status</th>
+    <th>Age</th>
+    <th>Number of children</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @memebers.each do |memeber| %>
+  <tr>
+    <td><%= memeber.user_name %></td>
+    <td><%= memeber.first_name %></td>
+    <td><%= memeber.last_name %></td>
+    <td><%= memeber.password %></td>
+    <td><%= memeber.street_number %></td>
+    <td><%= memeber.street_name %></td>
+    <td><%= memeber.city %></td>
+    <td><%= memeber.state %></td>
+    <td><%= memeber.zip_code %></td>
+    <td><%= memeber.email_address %></td>
+    <td><%= memeber.religon %></td>
+    <td><%= memeber.education_level %></td>
+    <td><%= memeber.partner %></td>
+    <td><%= memeber.employment_status %></td>
+    <td><%= memeber.age %></td>
+    <td><%= memeber.number_of_children %></td>
+    <td><%= link_to 'Show', memeber %></td>
+    <td><%= link_to 'Edit', edit_memeber_path(memeber) %></td>
+    <td><%= link_to 'Destroy', memeber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Memeber', new_memeber_path %>

@@ -3,7 +3,8 @@
 <table>
   <tr>
     <th>Member</th>
-    <th>Judegemen date</th>
+    <th>Sin</th>
+    <th>Judgement date</th>
     <th>Judgement time</th>
     <th>Judgement</th>
     <th></th>
@@ -14,7 +15,8 @@
 <% @judgements.each do |judgement| %>
   <tr>
     <td><%= judgement.member_id %></td>
-    <td><%= judgement.judegemen_date %></td>
+    <td><%= judgement.sin_id %></td>
+    <td><%= judgement.judgement_date %></td>
     <td><%= judgement.judgement_time %></td>
     <td><%= judgement.judgement %></td>
     <td><%= link_to 'Show', judgement %></td>

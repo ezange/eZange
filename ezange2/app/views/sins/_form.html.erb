@@ -1,0 +1,69 @@
+<%= form_for(@sin) do |f| %>
+  <% if @sin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sin.errors.count, "error") %> prohibited this sin from being saved:</h2>
+
+      <ul>
+      <% @sin.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :member_id %><br />
+    <%= f.number_field :member_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :post_date %><br />
+    <%= f.date_select :post_date %>
+  </div>
+  <div class="field">
+    <%= f.label :post_time %><br />
+    <%= f.time_select :post_time %>
+  </div>
+  <div class="field">
+    <%= f.label :sin_date %><br />
+    <%= f.date_select :sin_date %>
+  </div>
+  <div class="field">
+    <%= f.label :sin_time %><br />
+    <%= f.time_select :sin_time %>
+  </div>
+  <div class="field">
+    <%= f.label :sin %><br />
+    <%= f.text_field :sin %>
+  </div>
+  <div class="field">
+    <%= f.label :sin_street_number %><br />
+    <%= f.number_field :sin_street_number %>
+  </div>
+  <div class="field">
+    <%= f.label :sin_street_name %><br />
+    <%= f.text_field :sin_street_name %>
+  </div>
+  <div class="field">
+    <%= f.label :sin_city %><br />
+    <%= f.text_field :sin_city %>
+  </div>
+  <div class="field">
+    <%= f.label :sin_state %><br />
+    <%= f.text_field :sin_state %>
+  </div>
+  <div class="field">
+    <%= f.label :sin_zip %><br />
+    <%= f.number_field :sin_zip %>
+  </div>
+  <div class="field">
+    <%= f.label :sin_country %><br />
+    <%= f.text_field :sin_country %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -10,11 +10,11 @@ class CreateSins < ActiveRecord::Migration
       t.float :sin_lat
       t.float :sin_lot
       t.string :sin
-      t.string :sin_street_number
+      t.integer :sin_street_number
       t.string :sin_street_name
       t.string :sin_city
       t.string :sin_state
-      t.string :sin_zip
+      t.integer :sin_zip
       t.string :sin_country
 
       t.timestamps
