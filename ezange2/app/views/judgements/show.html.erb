@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Memebr:</b>
+  <%= @judgement.memebr_id %>
+</p>
+
+<p>
+  <b>Sin:</b>
+  <%= @judgement.sin_id %>
+</p>
+
+<p>
+  <b>Judgement date:</b>
+  <%= @judgement.judgement_date %>
+</p>
+
+<p>
+  <b>Judgement time:</b>
+  <%= @judgement.judgement_time %>
+</p>
+
+<p>
+  <b>Jugement:</b>
+  <%= @judgement.jugement %>
+</p>
+
+
+<%= link_to 'Edit', edit_judgement_path(@judgement) %> |
+<%= link_to 'Back', judgements_path %>
