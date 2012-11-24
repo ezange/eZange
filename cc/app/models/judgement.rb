@@ -1,5 +1,5 @@
 class Judgement < ActiveRecord::Base
-  belongs_to :member_id
-  belongs_to :sin_id
+  belongs_to :member
+  belongs_to :sin
   attr_accessible :judgement, :timestamp
 end

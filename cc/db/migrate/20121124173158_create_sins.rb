@@ -1,7 +1,7 @@
 class CreateSins < ActiveRecord::Migration
   def change
     create_table :sins do |t|
-      t.references :member_id
+      t.references :member
       t.string :title
       t.date :sin_date
       t.time :sin_time
@@ -15,6 +15,6 @@ class CreateSins < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :sins, :member_id_id
+    add_index :sins, :member_id
   end
 end
