@@ -1,0 +1,73 @@
+<%= form_for(@member) do |f| %>
+  <% if @member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+      <ul>
+      <% @member.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :user_name %><br />
+    <%= f.text_field :user_name %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :street_number %><br />
+    <%= f.number_field :street_number %>
+  </div>
+  <div class="field">
+    <%= f.label :street_name %><br />
+    <%= f.text_field :street_name %>
+  </div>
+  <div class="field">
+    <%= f.label :zipcode %><br />
+    <%= f.number_field :zipcode %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :religon %><br />
+    <%= f.text_field :religon %>
+  </div>
+  <div class="field">
+    <%= f.label :education_level %><br />
+    <%= f.text_field :education_level %>
+  </div>
+  <div class="field">
+    <%= f.label :partner %><br />
+    <%= f.text_field :partner %>
+  </div>
+  <div class="field">
+    <%= f.label :emloyment_status %><br />
+    <%= f.text_field :emloyment_status %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :number_of_children %><br />
+    <%= f.text_field :number_of_children %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

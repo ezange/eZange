@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @member.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @member.last_name %>
+</p>
+
+<p>
+  <b>User name:</b>
+  <%= @member.user_name %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @member.password %>
+</p>
+
+<p>
+  <b>Street number:</b>
+  <%= @member.street_number %>
+</p>
+
+<p>
+  <b>Street name:</b>
+  <%= @member.street_name %>
+</p>
+
+<p>
+  <b>Zipcode:</b>
+  <%= @member.zipcode %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @member.email %>
+</p>
+
+<p>
+  <b>Religon:</b>
+  <%= @member.religon %>
+</p>
+
+<p>
+  <b>Education level:</b>
+  <%= @member.education_level %>
+</p>
+
+<p>
+  <b>Partner:</b>
+  <%= @member.partner %>
+</p>
+
+<p>
+  <b>Emloyment status:</b>
+  <%= @member.emloyment_status %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @member.age %>
+</p>
+
+<p>
+  <b>Number of children:</b>
+  <%= @member.number_of_children %>
+</p>
+
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

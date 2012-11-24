@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  member_id: 
+  sin_id: 
+  timestamp: 2012-11-24 12:33:58
+  judgement: MyText
+
+two:
+  member_id: 
+  sin_id: 
+  timestamp: 2012-11-24 12:33:58
+  judgement: MyText

@@ -1,0 +1,49 @@
+<h1>Listing members</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>User name</th>
+    <th>Password</th>
+    <th>Street number</th>
+    <th>Street name</th>
+    <th>Zipcode</th>
+    <th>Email</th>
+    <th>Religon</th>
+    <th>Education level</th>
+    <th>Partner</th>
+    <th>Emloyment status</th>
+    <th>Age</th>
+    <th>Number of children</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @members.each do |member| %>
+  <tr>
+    <td><%= member.first_name %></td>
+    <td><%= member.last_name %></td>
+    <td><%= member.user_name %></td>
+    <td><%= member.password %></td>
+    <td><%= member.street_number %></td>
+    <td><%= member.street_name %></td>
+    <td><%= member.zipcode %></td>
+    <td><%= member.email %></td>
+    <td><%= member.religon %></td>
+    <td><%= member.education_level %></td>
+    <td><%= member.partner %></td>
+    <td><%= member.emloyment_status %></td>
+    <td><%= member.age %></td>
+    <td><%= member.number_of_children %></td>
+    <td><%= link_to 'Show', member %></td>
+    <td><%= link_to 'Edit', edit_member_path(member) %></td>
+    <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Member', new_member_path %>

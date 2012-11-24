@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  charity_id: 
+  sin_id: 
+  time_donation: MyString
+  money_donation: MyString
+
+two:
+  charity_id: 
+  sin_id: 
+  time_donation: MyString
+  money_donation: MyString

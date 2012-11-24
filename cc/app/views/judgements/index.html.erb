@@ -1,0 +1,29 @@
+<h1>Listing judgements</h1>
+
+<table>
+  <tr>
+    <th>Member</th>
+    <th>Sin</th>
+    <th>Timestamp</th>
+    <th>Judgement</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @judgements.each do |judgement| %>
+  <tr>
+    <td><%= judgement.member_id %></td>
+    <td><%= judgement.sin_id %></td>
+    <td><%= judgement.timestamp %></td>
+    <td><%= judgement.judgement %></td>
+    <td><%= link_to 'Show', judgement %></td>
+    <td><%= link_to 'Edit', edit_judgement_path(judgement) %></td>
+    <td><%= link_to 'Destroy', judgement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Judgement', new_judgement_path %>

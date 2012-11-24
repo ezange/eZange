@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  member_id: 
+  title: MyString
+  sin_date: 2012-11-24
+  sin_time: 2012-11-24 12:31:58
+  sin_street_number: 1
+  sin_street_name: MyString
+  sin_city: MyString
+  sin_state: MyString
+  sin_zipcode: 1
+  sin_country: MyString
+  sin: MyText
+
+two:
+  member_id: 
+  title: MyString
+  sin_date: 2012-11-24
+  sin_time: 2012-11-24 12:31:58
+  sin_street_number: 1
+  sin_street_name: MyString
+  sin_city: MyString
+  sin_state: MyString
+  sin_zipcode: 1
+  sin_country: MyString
+  sin: MyText

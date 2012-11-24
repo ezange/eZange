@@ -1,0 +1,43 @@
+<h1>Listing sins</h1>
+
+<table>
+  <tr>
+    <th>Member</th>
+    <th>Title</th>
+    <th>Sin date</th>
+    <th>Sin time</th>
+    <th>Sin street number</th>
+    <th>Sin street name</th>
+    <th>Sin city</th>
+    <th>Sin state</th>
+    <th>Sin zipcode</th>
+    <th>Sin country</th>
+    <th>Sin</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sins.each do |sin| %>
+  <tr>
+    <td><%= sin.member_id %></td>
+    <td><%= sin.title %></td>
+    <td><%= sin.sin_date %></td>
+    <td><%= sin.sin_time %></td>
+    <td><%= sin.sin_street_number %></td>
+    <td><%= sin.sin_street_name %></td>
+    <td><%= sin.sin_city %></td>
+    <td><%= sin.sin_state %></td>
+    <td><%= sin.sin_zipcode %></td>
+    <td><%= sin.sin_country %></td>
+    <td><%= sin.sin %></td>
+    <td><%= link_to 'Show', sin %></td>
+    <td><%= link_to 'Edit', edit_sin_path(sin) %></td>
+    <td><%= link_to 'Destroy', sin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sin', new_sin_path %>

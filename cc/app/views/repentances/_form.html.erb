@@ -1,0 +1,33 @@
+<%= form_for(@repentance) do |f| %>
+  <% if @repentance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@repentance.errors.count, "error") %> prohibited this repentance from being saved:</h2>
+
+      <ul>
+      <% @repentance.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :charity_id %><br />
+    <%= f.text_field :charity_id %>
+  </div>
+  <div class="field">
+    <%= f.label :sin_id %><br />
+    <%= f.text_field :sin_id %>
+  </div>
+  <div class="field">
+    <%= f.label :time_donation %><br />
+    <%= f.text_field :time_donation %>
+  </div>
+  <div class="field">
+    <%= f.label :money_donation %><br />
+    <%= f.text_field :money_donation %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

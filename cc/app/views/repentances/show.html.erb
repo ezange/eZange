@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Charity:</b>
+  <%= @repentance.charity_id %>
+</p>
+
+<p>
+  <b>Sin:</b>
+  <%= @repentance.sin_id %>
+</p>
+
+<p>
+  <b>Time donation:</b>
+  <%= @repentance.time_donation %>
+</p>
+
+<p>
+  <b>Money donation:</b>
+  <%= @repentance.money_donation %>
+</p>
+
+
+<%= link_to 'Edit', edit_repentance_path(@repentance) %> |
+<%= link_to 'Back', repentances_path %>
