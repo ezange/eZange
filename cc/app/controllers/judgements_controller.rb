@@ -1,4 +1,20 @@
 class JudgementsController < ApplicationController
+
+  before_filter :authenticate_self, :only => ['edit', 'distroy']
+  
+  def authenticate_self
+    member = Member.find_by_id(session[:member_id])
+    if session[:member_id].nil?
+      flash[:alert] = 'You need to login before proceed.'
+      redirect_to(:controller => 'admin', :action => 'login') 
+      
+      else if session[:member_id].to_s != params[:member_id]
+        flash[:alert] = 'You need to be the user him/herself for the action.'
+        redirect_to(:controller => 'admin', :action=> 'login')
+      end
+    end
+  end
+
   # GET /judgements
   # GET /judgements.json
   def index

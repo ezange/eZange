@@ -8,6 +8,19 @@
 </head>
 <body>
 
+  <header style="background-color:grey; height:70px; padding:10px;">
+    <p style="float:right; margin:0; padding:0;">
+      <% if !session[:member_id].nil? %>
+        <% member = Member.find_by_id(session[:member_id]) %>
+        <%= member.user_name %> | 
+        <%= link_to 'Logout', :controller => 'admin', :action => 'logout' %>
+        <% else %>
+          <%= link_to 'Login', :controller => 'admin', :action => 'login' %>
+     <% end %>
+    </p>
+    </header>
+
+
 <%= yield %>
 
 </body>

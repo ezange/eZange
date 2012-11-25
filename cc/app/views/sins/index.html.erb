@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Sin ID</th>
     <th>Member</th>
     <th>Title</th>
     <th>Sin date</th>
@@ -20,7 +21,9 @@
 
 <% @sins.each do |sin| %>
   <tr>
-    <td><%= sin.member_id %></td>
+    <td><%= sin.id %></td>
+    <% member = Member.find_by_id(sin.member_id) %>
+    <td><%= member.user_name %></td>
     <td><%= sin.title %></td>
     <td><%= sin.sin_date %></td>
     <td><%= sin.sin_time %></td>

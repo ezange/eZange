@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Member ID</th>
     <th>First name</th>
     <th>Last name</th>
     <th>User name</th>
@@ -23,6 +24,7 @@
 
 <% @members.each do |member| %>
   <tr>
+    <td><%= member.id %></td>
     <td><%= member.first_name %></td>
     <td><%= member.last_name %></td>
     <td><%= member.user_name %></td>

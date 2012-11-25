@@ -12,8 +12,9 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :member_id %><br />
-    <%= f.text_field :member_id %>
+    <% member = Member.find_by_id(session[:member_id]) %>
+    <%= f.label member.user_name %><br />
+    <%= f.hidden_field :member_id, :value => member.id %>
   </div>
   <div class="field">
     <%= f.label :title %><br />

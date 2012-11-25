@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Judgement ID</th>
     <th>Member</th>
     <th>Sin</th>
     <th>Timestamp</th>
@@ -13,7 +14,13 @@
 
 <% @judgements.each do |judgement| %>
   <tr>
-    <td><%= judgement.member_id %></td>
+    <td><%= judgement.id %></td>
+    <% if !judgement.member_id.nil? %>
+      <% member = Member.find_by_id(judgement.member_id) %>
+      <td><%= member.user_name %></td>
+      <% else %>
+        <td></td>
+    <% end %>
     <td><%= judgement.sin_id %></td>
     <td><%= judgement.timestamp %></td>
     <td><%= judgement.judgement %></td>

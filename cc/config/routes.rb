@@ -1,4 +1,10 @@
 Cc::Application.routes.draw do
+  get "admin/login"
+
+  get "admin/logout"
+
+  post "admin/login"
+  
   resources :repentances
 
   resources :charities

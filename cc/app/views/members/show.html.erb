@@ -70,6 +70,20 @@
   <%= @member.number_of_children %>
 </p>
 
+<h1> Sins </h1>
+<% @member = Member.find_by_id(params[:id]) %>
+<% @sins = @member.sins %>
+<% @sins.each do |s| %>
+<p>  <%= s.title %> </p>
+<% end %>
+
+
+<h1> Judgements </h1>
+<% @member = Member.find_by_id(params[:id]) %>
+<% @judgements = @member.judgements %>
+<% @judgements.each do |j| %>
+<p>  <%= j.judgement %> </p>
+<% end %>
 
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>
