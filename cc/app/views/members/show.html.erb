@@ -1,5 +1,22 @@
 <p id="notice"><%= notice %></p>
+<title>eZange : Zange Profile</title>
 
+  <h1>Zange Profile</h1>
+<div style="float:left; width:300px;">
+<p>
+  <b>User name:</b>
+  <%= @member.user_name %>
+</p>
+<p>
+  <b>Religon:</b>
+  <%= @member.religon %>
+</p>
+<p>
+  <b>ZANGE:</b>
+  <p>I want to ZANGE that...</p>
+</p>
+
+<% if @member.id == session[:member_id] %>
 <p>
   <b>First name:</b>
   <%= @member.first_name %>
@@ -8,11 +25,6 @@
 <p>
   <b>Last name:</b>
   <%= @member.last_name %>
-</p>
-
-<p>
-  <b>User name:</b>
-  <%= @member.user_name %>
 </p>
 
 <p>
@@ -39,12 +51,7 @@
   <b>Email:</b>
   <%= @member.email %>
 </p>
-
-<p>
-  <b>Religon:</b>
-  <%= @member.religon %>
-</p>
-
+<% end %>
 <p>
   <b>Education level:</b>
   <%= @member.education_level %>
@@ -70,20 +77,38 @@
   <%= @member.number_of_children %>
 </p>
 
-<h1> Sins </h1>
+
+<br/>
+<% if @member.id == session[:member_id] %>
+<span class="label"><%= link_to 'Edit', edit_member_path(@member) %></span> |
+<% end %>
+<span class="label"><%= link_to 'Back', members_path %></span>
+
+
+</div>
+<div style="float:left; width:300px;">
+<h2> Sins </h2>
 <% @member = Member.find_by_id(params[:id]) %>
 <% @sins = @member.sins %>
 <% @sins.each do |s| %>
-<p>  <%= s.title %> </p>
+<p><%= s.title %></p>
+<span class="label"><%= link_to 'view', :controller => 'sins', :action => 'show', :id => s.id  %></span><br/>
 <% end %>
+</div>
+<div style="float:left; width:300px;">
+<h2> Judgements </h2>
 
-
-<h1> Judgements </h1>
 <% @member = Member.find_by_id(params[:id]) %>
 <% @judgements = @member.judgements %>
 <% @judgements.each do |j| %>
-<p>  <%= j.judgement %> </p>
+<p> <%= j.judgement %></p>
+<span class="label"><%= link_to 'view', :controller => 'judgements', :action =>'show', :id => j.id %> </span>
+<% if j.member_id == session[:member_id] %>
+<span class="label"><%= link_to 'Destroy', [j.sin, j], :method => :delete, :data => { :confirm => 'Are you sure?'} %></span>
 <% end %>
+</br></br>
+<% end %>
+</div>
 
-<%= link_to 'Edit', edit_member_path(@member) %> |
-<%= link_to 'Back', members_path %>
+
+

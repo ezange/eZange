@@ -1,5 +1,30 @@
-<h1>New sin</h1>
+<div class="page-header">
+<h1>Post a Zange</h1>
+</div>
+<% if session[:member_id].nil? %>
+<div class="row">
+<div class="span4">
+<div class="alert alert-success">
+<p>Already registered? <strong> <%= link_to 'Go here to login!', :controller => 'admin', :action => 'login'%></strong></p>
+<p>Need to register? <strong> <%= link_to 'Go here to register!', :controller => 'members', :action => 'new'%></strong></a></p>
+</div>
+</div>
+</div>
+<% else %>
+<div class="row">
+<div class="span12">
+<div class="alert alert-block">
+<p>Here is your chance to get it all off your chest! What did you
+do that was so bad? Or maybe it was somethihg that you did not do?
+Either way, here is a forum for you to confess your Zanges (sins)
+and let the world judge you!</p>
+</div>
+</div>
+</div>
 
 <%= render 'form' %>
-
-<%= link_to 'Back', sins_path %>
+<div class="container">
+  
+</form><a href="#"; style="color:white;">Back to top</a>
+<% end %>  
+</div>

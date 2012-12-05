@@ -1,5 +1,14 @@
-<h1>Login</h1>
+<title>eZange : Login</title>
+<section id="Login">
+  <div class="page-header">
+    <h1>Login</h1>
+  </div>
 
+ <div class="row">
+    <div class="span4">
+      <div class="alert alert-success">
+          <p>Haven't  registered? <strong><%= link_to 'GO HERE FIRST!', :controller => 'members', :action => 'new' %></a></strong></p>
+ 
 <% if flash[:alert] %>
   <p style="color:green;">
     <%= flash[:alert] %>
@@ -8,13 +17,45 @@
 
 <%= form_tag do %>
 <p>
-Name: <%= text_field_tag :user_name, params[:user_name] %>
+Name:</br> <%= text_field_tag :user_name, params[:user_name] %>
 </p>
 <p>
-Password: <%= password_field_tag :password, params[:password] %>
+Password:</br> <%= password_field_tag :password, params[:password] %>
 </p>
-<p>
-<%= submit_tag "Login" %>
-</p>
+
+<%= submit_tag "Login" %> <button type="reset" class="btn btn-small">Reset</button>
+
 <% end %>
+
+      </div>
+    </div>
+  </div>
+</secion>
+
+<!--
+  <div class="row">
+    <div class="span4">
+      <div class="alert alert-success">
+          <p>Haven't  registered? <strong><a href="registration.html">GO HERE FIRST!</a></strong></p>
+          <form name="login" action=" " method="get">
+            <div class="Login">
+              <input class="input-small focused" id="loginusername" value="User name..." type="text">
+              <input class="input-small focused" id="loginpass" value="Password..." type="text">
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-small">Submit</button>
+                <button type="reset" class="btn btn-small">Reset</button>
+              </div>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/application.js"></script>
+    <script src="../js/bootswatch.js"></script>
 

@@ -1,25 +1,37 @@
 <p id="notice"><%= notice %></p>
+<title>eZange : Judgement</title>
+<p>
+  <b>Judgement:</b>
+  <div class="alert alert-block">
+  <%= @judgement.judgement %>
+  </div>
+</p>
+
 
 <p>
   <b>Member:</b>
-  <%= @judgement.member_id %>
+<% if ! @judgement.member_id.nil? %>
+  <% member = Member.find_by_id(@judgement.member_id) %>
+  <%= member.user_name %>
+<% end %>
 </p>
-
-<p>
-  <b>Sin:</b>
-  <%= @judgement.sin_id %>
-</p>
-
 <p>
   <b>Timestamp:</b>
   <%= @judgement.timestamp %>
 </p>
 
 <p>
-  <b>Judgement:</b>
-  <%= @judgement.judgement %>
+  <b>Zange:</b>
+    <% sin = Sin.find_by_id(@judgement.sin_id) %>
+    <p><%= sin.title %> 
+    <span class="label"><%= link_to 'view', :controller => 'sins', :action => 'show', :id => sin.id  %></span><br/></p> 
+    <div class="alert alert-block">
+      <%= sin.sin %>
+    </div>
 </p>
 
 
-<%= link_to 'Edit', edit_judgement_path(@judgement) %> |
-<%= link_to 'Back', judgements_path %>
+<% if @judgement.member_id == session[:member_id] %>
+   <span class="label"><%= link_to 'Destroy Judgement', [@judgement.sin, @judgement], :method => :delete, :data => { :confirm => 'Are you sure?'} %></span>
+<% end %>
+<span class="label"><%= link_to 'Back', judgements_path %></span>

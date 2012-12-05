@@ -1,0 +1,57 @@
+ <title>eZange : Contact</title>
+  
+ 
+    <div class="page-header">
+      <h1>Contact</h1>
+    </div>
+
+    <div class="row">
+      <div class="span7 offset1"></div>
+    </div><br/>
+
+    <form name="contact" action="" method="get">
+      <div class="row">
+        <div class="span4" id="map_canvas" style="width:600px;">
+          <div class="alert alert-block">
+            <div class="control-group">
+              <label class="control-label" for="textarea">Say 'Hello' or something nice
+              to the hardworking people at eZange. We will happily answer any questions
+              you may have.<br />
+              <br /></label>
+<%= form_for(@contact) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %> <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %> <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content, :rows => 10, :style => "width:550px;"  %>
+  </div>
+  
+    <div class="actions">
+      <%= f.submit :submit %>
+      <button type="reset"class="btn btn-small">Reset</button>
+    </div>
+
+
+<% end %>
+
+         </div>
+        </div>
+      </div>
+    </form>
+

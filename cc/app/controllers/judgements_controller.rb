@@ -1,19 +1,35 @@
 class JudgementsController < ApplicationController
 
-  before_filter :authenticate_self, :only => ['edit', 'distroy']
   
+=begin
+  before_filter :authenticate_self, :only => ['edit','destroy']
+  def authenticate_self
+    if session[:member_id].nil?
+      flash[:alert] = 'you need to login before proceed.'
+      redirect_to(:controller => 'admin', :action => 'login')
+      
+    elsif session[:member_id].to_s != params[:member_id]
+    
+      flash[:alert] = 'you need to be the user him/herself for this action.'
+      redirect_to(:controller => 'admin', :action => 'login')
+                  
+    end
+  end
+
+  before_filter :authenticate_self, :only => ['edit', 'destroy']
   def authenticate_self
     member = Member.find_by_id(session[:member_id])
     if session[:member_id].nil?
       flash[:alert] = 'You need to login before proceed.'
       redirect_to(:controller => 'admin', :action => 'login') 
       
-      else if session[:member_id].to_s != params[:member_id]
+      else if member.id != @judgement.member_id
         flash[:alert] = 'You need to be the user him/herself for the action.'
         redirect_to(:controller => 'admin', :action=> 'login')
       end
     end
   end
+=end
 
   # GET /judgements
   # GET /judgements.json
@@ -37,10 +53,21 @@ class JudgementsController < ApplicationController
     end
   end
 
+ def destroy
+    @sin = Sin.find(params[:sin_id])
+    @judgement = @sin.judgements.find(params[:id])
+    @judgement.destroy
+
+    respond_to do |format|
+      format.html { redirect_to sin_path(@sin) }
+      format.json { head :no_content }
+    end
+  end
   # GET /judgements/new
   # GET /judgements/new.json
+
   def new
-    @judgement = Judgement.new
+   @judgement = Judgement.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -84,10 +111,10 @@ class JudgementsController < ApplicationController
       end
     end
   end
-
   # DELETE /judgements/1
   # DELETE /judgements/1.json
-  def destroy
+
+  def destroyit
     @judgement = Judgement.find(params[:id])
     @judgement.destroy
 
@@ -96,4 +123,6 @@ class JudgementsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 end

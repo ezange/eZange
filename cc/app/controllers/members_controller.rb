@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  before_filter :authenticate_self, :only => ['edit', 'distroy']
+#before_filter :authenticate_self, :only => ['edit', 'destroy']
   
   def authenticate_self
     member = Member.find_by_id(session[:member_id])

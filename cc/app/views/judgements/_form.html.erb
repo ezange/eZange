@@ -1,32 +1,23 @@
-<%= form_for(@judgement) do |f| %>
-  <% if @judgement.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@judgement.errors.count, "error") %> prohibited this judgement from being saved:</h2>
+<%= form_for([@sin, @sin.judgements.build]) do |f| %>
 
-      <ul>
-      <% @judgement.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <% member = Member.find_by_id(session[:member_id]) %>
-    <%= f.label member.user_name %><br />
-    <%= f.hidden_field :member_id, :value => member.id %>
+    <%= f.hidden_field :member_id, :value => session[:member_id] %>
   </div>
+
   <div class="field">
-    <%= f.label :sin_id %><br />
-    <%= f.text_field :sin_id %>
+    <%= f.hidden_field :sin_id, :value => params[:id] %>
   </div>
+
+
   <div class="field">
     <%= f.label :timestamp %><br />
     <%= f.datetime_select :timestamp %>
   </div>
   <div class="field">
     <%= f.label :judgement %><br />
-    <%= f.text_area :judgement %>
+    <%= f.text_area :judgement, :rows => 6, :style => "width:650px;"%>
   </div>
   <div class="actions">
     <%= f.submit %>

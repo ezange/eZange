@@ -1,27 +1,49 @@
-<!DOCTYPE html>
-<html>
 <head>
-  <title>Cc</title>
+ <!-- <title>eZange</title> -->
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <header style="background-color:grey; height:70px; padding:10px;">
-    <p style="float:right; margin:0; padding:0;">
-      <% if !session[:member_id].nil? %>
+  <div class="container", style="color:#EAF8F9;">
+  <header>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+    <div class="container"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></a> <a class="brand" <%= link_to 'eZange', :controller => 'admin', :action => 'index' %></a>
+    <div class="nav-collapse collapse">
+    <ul class="nav">
+    <li class="active"><a <%= link_to 'Home', :controller => 'admin', :action => 'index' %></a></li>
+    <li><a <%= link_to 'About', :controller => 'admin', :action => 'about' %></a></li>
+    <li><a <%= link_to 'Contact', :controller => 'contacts', :action => 'new' %></a></li>
+    
+    <% if !session[:member_id].nil? %>
         <% member = Member.find_by_id(session[:member_id]) %>
-        <%= member.user_name %> | 
-        <%= link_to 'Logout', :controller => 'admin', :action => 'logout' %>
+    <li><a <%= link_to member.user_name, :controller => 'members', :action => 'show', :id => member.id %></a></li>
+    <li><a <%= link_to 'Logout', :controller => 'admin', :action => 'logout' %></li>
         <% else %>
-          <%= link_to 'Login', :controller => 'admin', :action => 'login' %>
-     <% end %>
-    </p>
-    </header>
-
-
+    <li><a <%= link_to 'Login', :controller => 'admin', :action => 'login' %></a></li>
+    <% end %>
+    
+    </ul>
+    </div>
+    <!--/.nav-collapse --></div>
+    </div>
+    </div>
+  </header>
+  <div class="container">
 <%= yield %>
-
+  </div>
+  
+    <hr />
+    <p>&#169; eZange 2012</p><!-- Footer ================================================== -->
+  </div><!-- /container -->
+  <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/application.js"></script>
+    <script src="../js/bootswatch.js"></script>
 </body>
-</html>
+
+ 

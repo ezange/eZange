@@ -1,5 +1,14 @@
 class SinsController < ApplicationController
-  before_filter :authenticate_self, :only => ['edit', 'distroy']
+#before_filter :authenticate_login, :only => 'new'
+    def authenticate_login
+      if session[:member_id].nil?
+        flash[:alart] = 'you need to login, before proceed.'
+        redirect_to :controller => 'admin', :action => 'login'
+      end
+    end
+ 
+ 
+  #before_filter :authenticate_self, :only => ['edit']
   
   def authenticate_self
     member = Member.find_by_id(session[:member_id])

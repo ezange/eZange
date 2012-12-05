@@ -1,0 +1,26 @@
+<% @sin = Sin.find_by_id(params[:id]) %>
+<% @judgements = @sin.judgements %>
+<table>
+  <tr>
+    <th>Judgement</th>
+    <th>Member</th>
+    <th>Timestamp</th>
+  </tr>
+
+<% @judgements.each do |judgement| %>
+  <tr>
+    <td><%= judgement.judgement %></td>
+    <% if !judgement.member_id.nil? %>
+      <% member = Member.find_by_id(judgement.member_id) %>
+      <td><%= member.user_name %></td>
+      <% else %>
+      <td></td>
+    <% end %>
+    <td><%= judgement.timestamp %></td>
+    
+    <td>
+        <% link_to 'Destroy Judgement', [judgement.sin, judgement], :method => :delete, :data => { :confirm => 'Are you sure?'} %>
+    </td>
+  </tr>
+<% end %>
+</table>
